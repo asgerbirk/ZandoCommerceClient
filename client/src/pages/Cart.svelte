@@ -45,7 +45,29 @@
             }
         }
     }
+
+   export async function removeFromCart(productId) {
+       console.log('Removing product:', productId); // Log the product ID you're removing
+       console.log('User ID:', user._id); // Log the user ID
+        const response = await fetch($BASE_URL + `/carts/${user._id}/${productId}`, {
+            method: "DELETE",
+            credentials: "include"
+        });
+       console.log('Response status:', response.status); // Log the response status
+       console.log(cartItems)
+
+        if (response.status === 200) {
+            cartItems = cartItems.filter(cartItem => cartItem.product._id !== productId);
+            calculateTotalPrice();
+            cartCount.set(cartItems.length);
+            console.log(cartItems)
+        } else {
+            console.error("Failed to remove item from cart");
+        }
+    }
 </script>
+
+
 {#if $isLoggedIn && user}
     <h1 class="text-2xl font-bold mb-4 md:mb-0 text-center">Your Cart</h1>
     <div class="cart flex flex-col md:flex-row md:justify-between bg-gray-200 p-4 rounded shadow">
@@ -55,15 +77,18 @@
         {:else}
             <div class="cart-items w-full md:w-3/4">
                 {#each cartItems as item (item._id)}
-                    <CartItem {item} totalPrice={totalPrice} />
+                    <CartItem {item}  {removeFromCart} totalPrice={totalPrice} key={item._id} />
                 {/each}
             </div>
 
-            <div class="total-price text-right md:self-center md:ml-4 bg-white p-4 rounded shadow">
-                <p class="text-lg font-semibold">Total Price: {totalPrice}</p>
+            <div class="justify-center w-54">
+                <div class="total-price bg-white p-4 rounded shadow">
+                    <p class="text-lg font-semibold">Total Price: {totalPrice}</p>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded md:self-start mt-4 md:mt-0">
+                        Checkout
+                    </button>
+                </div>
             </div>
-
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 md:mt-0" >Checkout</button>
         {/if}
     </div>
 {:else}

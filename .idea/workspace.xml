@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e63899b-ff92-45b7-b0b0-b9e3b339f94e" name="Changes" comment="first">
-      <change beforePath="$PROJECT_DIR$/client/.svelte-kit/ambient.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.svelte-kit/generated/client/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.svelte-kit/generated/client/matchers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.svelte-kit/generated/client/nodes/0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.svelte-kit/generated/client/nodes/1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.svelte-kit/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app.css" afterDir="false" />
+    <list default="true" id="4e63899b-ff92-45b7-b0b0-b9e3b339f94e" name="Changes" comment="cleaned the code a little">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Cart.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Cart.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +31,7 @@
         <option value="Footer" />
         <option value="Navbar" />
         <option value="JavaScript File" />
+        <option value="CheckUserAtuh" />
       </list>
     </option>
   </component>
@@ -72,6 +68,23 @@
       <recent name="$PROJECT_DIR$/client" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/client/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -85,6 +98,8 @@
       <workItem from="1685521460981" duration="62000" />
       <workItem from="1685521960319" duration="9000" />
       <workItem from="1685521972406" duration="7000" />
+      <workItem from="1685523272631" duration="8468000" />
+      <workItem from="1685533419481" duration="276000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1685466882614</created>
@@ -100,7 +115,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685466914586</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="first">
+      <created>1685524875163</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685524875163</updated>
+    </task>
+    <task id="LOCAL-00004" summary="cleaned the code a little">
+      <created>1685531164531</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685531164531</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,6 +137,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first" />
-    <option name="LAST_COMMIT_MESSAGE" value="first" />
+    <MESSAGE value="cleaned the code a little" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaned the code a little" />
   </component>
 </project>
