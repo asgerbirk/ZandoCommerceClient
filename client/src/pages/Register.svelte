@@ -27,9 +27,9 @@
                     await Swal.fire({
                         icon: "info",
                         title: "Almost there!",
-                        timer: 2000,
+                        timer: 5000,
                         text: "Please check your email to verify your account",
-                        showConfirmButton: true,
+                        showConfirmButton: false,
                     });
                 }
             }else {
