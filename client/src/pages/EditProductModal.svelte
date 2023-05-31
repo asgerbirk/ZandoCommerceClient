@@ -6,7 +6,7 @@
 
 
 
-    // Replace exported close function with a function to toggle the modal
+
     export let showModal = false;
 
     export let product;

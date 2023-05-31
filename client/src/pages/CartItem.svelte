@@ -4,7 +4,7 @@
     export let item;
 
     function removeFromCart() {
-        // Implement your logic to remove the item from the cart.
+
     }
 </script>
 
@@ -27,7 +27,6 @@
                         </Carousel>
                     </div>
                 </div>
-                <!-- Product Details -->
                 <div class="w-1/2 ml-4">
                     <h2 class="text-lg font-bold">{item.product.name}</h2>
                     <p class="text-sm text-gray-600">{item.product.description}</p>

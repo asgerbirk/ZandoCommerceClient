@@ -17,13 +17,12 @@
                     method: 'GET',
                     credentials: "include",
                     headers: {
-                        'Content-Type': 'application/json' // Add this line to set the request headers
+                        'Content-Type': 'application/json'
                     },
                 });
 
                 if (response.ok) {
                     const data = await response.json();
-                    // Update cartCount store based on the number of items in the user's cart
                     cartCount.set(data.items.length);
                 }
             }

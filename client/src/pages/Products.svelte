@@ -4,11 +4,13 @@
     import Carousel from 'svelte-carousel';
     import {checkAuthentication} from "../auth/auth.js";
     import {cartCount} from "../store/cartStore.js";
+    import Swal from "sweetalert2";
+    import {navigate} from "svelte-navigator";
 
 
     let products = [];
     let search = '';
-    let sort = 'price_asc'; // or 'price_desc'
+    let sort = 'price_asc';
     let username = "";
     let user;
 
@@ -53,15 +55,10 @@
 
     async function addToCart(productId) {
 
-
-
-
         if (!user) {
             console.log('User is not authenticated');
             return;
         }
-
-
 
         try {
             const response = await fetch($BASE_URL + `/carts/${user._id}`, {
@@ -76,13 +73,22 @@
             });
 
             if (response.ok) {
-                console.log('Product added to cart successfully');
-                cartCount.update(count => count + 1); // increment the count in the store
+                cartCount.update(count => count + 1);
+                await Swal.fire({
+                    icon: "success",
+                    title: "Added to your cart!",
+                    showConfirmButton: false,
+                    timer: 1500,
+                })
             } else {
                 const responseData = await response.json();
                 if (response.status === 400 && responseData.message === 'Product is already in the cart') {
-                    console.log('Product is already in the cart');
-                    alert('Product is already in the cart');
+                    await Swal.fire({
+                        icon: "error",
+                        title: "That product is already in you cart!",
+                        showConfirmButton: false,
+                        timer: 1500,
+                    })
                 } else {
                     console.log('Failed to add product to cart');
                 }

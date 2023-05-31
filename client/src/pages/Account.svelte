@@ -72,8 +72,7 @@
 </script>
 
 
-{#if $isLoggedIn}
-    {#if user}
+{#if $isLoggedIn && user}
         <h1 class="text-5xl ">Here are your products for sale</h1>
 
         <div class="grid grid-cols-3 gap-x-6 gap-y-8 items-start">
@@ -120,7 +119,6 @@
                     on:update={handleProductUpdate}
                     on:close={handleModalToggle}/>
         {/if}
-    {/if}
 {:else}
     <div class="flex flex-col items-center justify-center h-screen">
         <h2 class="text-5xl mb-4">Forbidden - either your token expired or you are not signed in - click here to sign in</h2>

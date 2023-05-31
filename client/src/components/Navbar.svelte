@@ -17,11 +17,9 @@
             if (response.status === 200) {
                 removeAccessToken()
                 navigate("/");
-            } else {
-                // Handle logout error
             }
         } catch (error) {
-            // Handle logout error
+
         }
     }
 </script>
@@ -47,11 +45,11 @@
                 </div>
             </div>
             <div class="flex items-center space-x-4 w-full justify-end pr-4">
-                <Link to="/createProduct" class="text-white  text-lg hover:text-gray-400">
-                    Create product
-                </Link>
                 <Link to="/products" class="text-white  text-lg hover:text-gray-400">
                     Products
+                </Link>
+                <Link to="/createProduct" class="text-white  text-lg hover:text-gray-400">
+                    Create product
                 </Link>
                 {#if $isLoggedIn}
                     <Link to="/" on:click={handleLogout} class="text-white hover:text-gray-400 text-lg">

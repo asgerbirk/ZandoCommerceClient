@@ -4,6 +4,7 @@
     import { checkAuthentication } from "../auth/auth.js";
     import { onMount } from "svelte";
     import Swal from "sweetalert2";
+    import {navigate} from "svelte-navigator";
 
     let files = []
     let name = "";
@@ -42,12 +43,14 @@
                 user = data.user;
                 isLoggedIn.set(true);
                 console.log(response);
-                await Swal.fire({
+                Swal.fire({
                     icon: "success",
                     title: "Product created!",
                     showConfirmButton: false,
-                    timer: 1000,
-                })
+                    timer: 3000,
+                }).then(() => {
+                    navigate("/products");
+                });
             }
         } catch (error) {
             console.error("There was an error submitting the form", error);
@@ -60,8 +63,7 @@
 
 
 
-{#if $isLoggedIn}
-    {#if user}
+{#if $isLoggedIn && user}
         <form on:submit|preventDefault={submit} class="w-full max-w-sm mx-auto mt-6">
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="file">
@@ -98,12 +100,12 @@
             </div>
             <input type="hidden" bind:value={user.username} />
         </form>
-    {/if}
 {:else}
     <div class="flex flex-col items-center justify-center h-screen">
         <h2 class="text-5xl mb-4">Forbidden - either your token expired or you are not signed in - click here to sign in</h2>
         <a href="/" class="text-3xl text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg  px-5 py-2.5 text-center mr-2 mb-2">
             Login
         </a>
+
     </div>
 {/if}
