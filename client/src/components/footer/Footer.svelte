@@ -1,5 +1,5 @@
 <div class="flex flex-col min-h-screen">
-    <footer class="bg-gray-800 py-1 mt-auto">
+    <footer class="bg-gray-800 py-1 mt-auto fixed bottom-0 left-0 right-0">
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center text-white font-light">

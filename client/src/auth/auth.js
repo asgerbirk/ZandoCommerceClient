@@ -1,9 +1,11 @@
-import {isLoggedIn} from "../store/accessToken.js";
+import { isLoggedIn } from "../store/accessToken.js";
+import {onMount} from "svelte";
 
 export async function checkAuthentication() {
     let user;
+
     try {
-        const response = await fetch( "http://localhost:8080/users", {
+        const response = await fetch("http://localhost:8080/users", {
             credentials: "include" // Include credentials for sending cookies
         });
 
@@ -11,7 +13,7 @@ export async function checkAuthentication() {
             const data = await response.json();
             user = data.user;
             isLoggedIn.set(true);
-        }else {
+        } else {
             isLoggedIn.set(false);
         }
     } catch (error) {

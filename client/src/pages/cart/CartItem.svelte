@@ -1,12 +1,9 @@
 <script>
     import Carousel from "svelte-carousel";
 
-
     export let item;
-    export let removeFromCart;
+    export let deleteFromCart;
     let user;
-
-
 </script>
 
 {#if item.product}
@@ -31,7 +28,7 @@
                     <p class="text-sm text-gray-600">{item.product.description}</p>
                     <p class="text-md font-semibold">Price: {item.product.price}</p>
                     <p class="text-md font-semibold">Quantity: {item.quantity}</p>
-                    <button class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-2 py-1.5" on:click={() => removeFromCart(item.product._id)}>
+                    <button class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-2 py-1.5" on:click={() => deleteFromCart(item.product._id)}>
                         <i class="fas fa-trash-alt mr-1"></i>
                         Remove
                     </button>
@@ -39,5 +36,4 @@
             </div>
         </div>
     </div>
-
 {/if}

@@ -1,14 +1,14 @@
 <script>
-    import {BASE_URL} from "../store/urlDomain.js";
+    import {BASE_URL} from "../../store/urlDomain.js";
     import Swal from "sweetalert2";
 
     let username = "";
     let email = "";
     let password = "";
     async function handleRegister() {
-        try{
+        try {
             const response =  await fetch($BASE_URL + "/register", {
-                credentials: 'include',
+                credentials: "include",
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -20,9 +20,9 @@
                 })
             });
 
-            if (response.status === 200){
+            if (response.status === 200) {
                 const data = await response.json();
-                console.log(data)
+                console.log(data);
                 if (data.message === "User created and verification email sent") {
                     await Swal.fire({
                         icon: "info",
@@ -32,26 +32,22 @@
                         showConfirmButton: false,
                     });
                 }
-            }else {
-                const errorData = await response.json();
-                console.log(errorData.message);
+            } else {
                 await Swal.fire({
                     icon: "error",
                     showConfirmButton: false,
                     title: "Oops...",
-                    text: errorData.message,
+                    text: "Email is already taken.",
                     timer: 2000,
                     timerProgressBar: true,
                     position: "top"
                 });
             }
 
-        }catch (error){
-            console.log(error)
+        } catch (error) {
+            console.log(error);
         }
     }
-
-
 </script>
 
 <div class="flex justify-center items-center h-screen">
@@ -81,6 +77,7 @@
                     type="email"
                     placeholder="Enter your email"
                     bind:value={email}
+
             />
         </div>
 
@@ -98,15 +95,12 @@
         </div>
 
         <div class="flex items-center justify-between">
-            <button
-                    class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-                    type="button"
-                    on:click={handleRegister }
-            >
+            <button class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" type="button" on:click={handleRegister}>
                 Register
             </button>
         </div>
     </form>
 </div>
+
 
 

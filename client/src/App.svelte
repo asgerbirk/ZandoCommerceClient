@@ -1,21 +1,21 @@
 <script>
   import { Router, Route } from "svelte-navigator";
-  import Home from "./pages/Home.svelte";
-  import Navbar from "./components/Navbar.svelte";
-  import Register from "./pages/Register.svelte";
-  import Login from "./pages/Login.svelte";
-  import VerifyMail from "./pages/VerifyMail.svelte";
-  import Account from "./pages/Account.svelte";
-  import CreateProduct from "./pages/CreateProduct.svelte";
-  import Products from "./pages/Products.svelte";
-  import ChatBot from "./components/ChatBot.svelte";
-  import Footer from "./components/Footer.svelte";
-  import EditProductModal from "./pages/EditProductModal.svelte";
-  import Cart from "./pages/Cart.svelte";
-  import CartItem from "./pages/CartItem.svelte";
+  import Home from "./pages/home/Home.svelte";
+  import Navbar from "./components/navbar/Navbar.svelte";
+  import Register from "./pages/login/Register.svelte";
+  import Login from "./pages/login/Login.svelte";
+  import VerifyMail from "./pages/login/VerifyMail.svelte";
+  import Account from "./pages/account/Account.svelte";
+  import CreateProduct from "./pages/product/CreateProduct.svelte";
+  import Products from "./pages/product/Products.svelte";
+  import ChatBot from "./components/chatbot/ChatBot.svelte";
+  import Footer from "./components/footer/Footer.svelte";
+  import EditProductModal from "./pages/product/EditProductModal.svelte";
+  import Cart from "./pages/cart/Cart.svelte";
+  import CartItem from "./pages/cart/CartItem.svelte";
+  import Success from "./pages/cart/Success.svelte";
+  import Cancel from "./pages/cart/Cancel.svelte";
 </script>
-
-
 
 <Router>
   <Navbar/>
@@ -31,6 +31,8 @@
     <Route path="/edit/:productId" component={EditProductModal}/>
     <Route path="/cart" component={Cart}/>
     <Route path="/cartItem" component={CartItem}/>
+    <Route path="/success" component={Success}/>
+    <Route path="/cancel" component={Cancel}/>
   </div>
   <Footer/>
 </Router>

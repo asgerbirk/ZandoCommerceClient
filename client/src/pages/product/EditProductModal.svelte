@@ -1,14 +1,9 @@
 <script>
-    import {createEventDispatcher, onMount} from 'svelte';
+    import { createEventDispatcher, onMount } from "svelte";
     import Carousel from "svelte-carousel";
-
-
-
-
-
+    import {BASE_URL} from "../../store/urlDomain.js";
 
     export let showModal = false;
-
     export let product;
 
     let image = "";
@@ -26,34 +21,32 @@
                 price
             };
 
-            const response = await fetch(`http://localhost:8080/products/${productId}`, {
-                method: 'PATCH',
-                credentials: 'include',
+            const response = await fetch($BASE_URL + `/products/${productId}`, {
+                method: "PATCH",
+                credentials: "include",
                 headers: {
-                    'Content-Type': 'application/json'
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify(updatedProduct)
             });
 
             if (response.status === 200) {
                 const updatedProductFromServer = await response.json();
-                console.log('Product updated successfully');
-                dispatch('update', updatedProductFromServer);
+                dispatch("update", updatedProductFromServer);
                 return updatedProductFromServer;
             } else {
-                console.error('Failed to update product');
+                console.error("Failed to update product");
             }
         } catch (error) {
-            console.error('Error updating product:', error);
+            console.error("Error updating product:", error);
         }
     }
 
     function handleSubmit() {
         handleUpdate(product._id);
-        console.log(product._id)
+        console.log(product._id);
         showModal = false;
     }
-
 
     // Initialize the variables with the initial product values
     onMount(() => {
@@ -73,30 +66,33 @@
                 <div class="flex justify-center">
                     <Carousel>
                         {#each product.imageUrls as imageUrls}
-                            <img
-                                    class="w-full h-64 object-cover rounded shadow transform transition duration-500 hover:scale-105 hover:shadow-lg"
-                                    src={imageUrls}
-                                    alt={product.name}
-                            />
+                            <img class="w-full h-64 object-cover rounded shadow transform transition duration-500 hover:scale-105 hover:shadow-lg" src={imageUrls} alt={product.name}/>
                         {/each}
                     </Carousel>
-
                 </div>
                 <label for="name" class="block text-gray-700 text-xl font-bold mb-2 text-center">It is not possible to update the pictures!</label>
 
                 <div class="mb-4">
                     <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
-                    <input type="text" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" bind:value={name} />
+                    <input type="text"
+                           id="name"
+                           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                           bind:value={name} />
                 </div>
 
                 <div class="mb-4">
                     <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Description:</label>
-                    <textarea id="description" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" bind:value={description}></textarea>
+                    <textarea id="description"
+                              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                              bind:value={description}></textarea>
                 </div>
 
                 <div class="mb-4">
                     <label for="price" class="block text-gray-700 text-sm font-bold mb-2">Price:</label>
-                    <input type="number" id="price" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" bind:value={price} />
+                    <input type="number"
+                           id="price"
+                           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                           bind:value={price} />
                 </div>
 
                 <div class="flex items-center justify-between">
@@ -111,3 +107,4 @@
         </div>
     </div>
 {/if}
+

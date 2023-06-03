@@ -9,6 +9,5 @@ export function setCookie(name, value, options) {
 }
 
 export function removeCookie(name) {
-    console.log(`Removing cookie: ${name}`);
     Cookies.remove(name);
 }
