@@ -15,9 +15,6 @@
                 const response = await fetch($BASE_URL + `/carts/${user._id}`, {
                     method: "GET",
                     credentials: "include",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
                 });
 
                 if (response.ok) {

@@ -25,21 +25,27 @@
         }
     });
 
-
     function postMessage() {
         socket.emit("post-message", { username: username, message: newMessage });
-
     }
 
     function toggleChat() {
-        showChat = !showChat;
+        if (showChat) {
+            showChat = false;
+        } else {
+            showChat = true;
+        }
     }
 </script>
 
 <div class="fixed bottom-0 right-0 p-4 mb-10">
     {#if $isLoggedIn}
         <button class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded transition duration-300 ease-in-out" on:click={toggleChat}>
-            {showChat ? "Hide Chat" : "Show Chat"}
+            {#if showChat}
+                Hide Chat
+            {:else}
+                Show Chat
+            {/if}
         </button>
         {#if showChat}
             <div class="bg-white p-4 mt-4 rounded shadow-lg w-64">

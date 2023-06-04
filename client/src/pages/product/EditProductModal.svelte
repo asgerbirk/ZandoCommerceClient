@@ -4,7 +4,7 @@
     import {BASE_URL} from "../../store/urlDomain.js";
 
     export let showModal = false;
-    export let product;
+    export let productToEdit;
 
     let image = "";
     let name = "";
@@ -43,17 +43,16 @@
     }
 
     function handleSubmit() {
-        handleUpdate(product._id);
-        console.log(product._id);
+        handleUpdate(productToEdit._id);
         showModal = false;
     }
 
-    // Initialize the variables with the initial product values
+
     onMount(() => {
-        image = product.imageUrls || "";
-        name = product.name || "";
-        description = product.description || "";
-        price = product.price || "";
+        image = productToEdit.imageUrls || "";
+        name = productToEdit.name || "";
+        description = productToEdit.description || "";
+        price = productToEdit.price || "";
     });
 </script>
 
@@ -65,8 +64,8 @@
             <form on:submit={handleSubmit} class="modal-content p-8">
                 <div class="flex justify-center">
                     <Carousel>
-                        {#each product.imageUrls as imageUrls}
-                            <img class="w-full h-64 object-cover rounded shadow transform transition duration-500 hover:scale-105 hover:shadow-lg" src={imageUrls} alt={product.name}/>
+                        {#each productToEdit.imageUrls as imageUrls}
+                            <img class="w-full h-64 object-cover rounded shadow transform transition duration-500 hover:scale-105 hover:shadow-lg" src={imageUrls} alt={productToEdit.name}/>
                         {/each}
                     </Carousel>
                 </div>

@@ -10,7 +10,6 @@
     let user;
     let editingProduct = null;
     let showModal = false;
-    let productUpdated = false;
 
     onMount(async () => {
         user = await checkAuthentication();
@@ -49,19 +48,18 @@
 
     function handleProductUpdate(event) {
         const updatedProduct = event.detail;
-        const index = products.findIndex(product => product._id === updatedProduct._id);
 
-        if (index !== -1) {
-            products[index] = updatedProduct;
-            productUpdated = true;
-        }
+        products = products.map(product => {
+            if (product._id === updatedProduct._id) {
+                return updatedProduct;
+            } else {
+                return product;
+            }
+        });
     }
 
-    function handleModalToggle() {
-        if (!showModal) {
-            productUpdated = false;
-        }
-    }
+
+
 </script>
 
 {#if $isLoggedIn && user}
@@ -105,10 +103,9 @@
 
     {#if editingProduct}
         <EditProductModal
-                bind:product={editingProduct}
+                bind:productToEdit={editingProduct}
                 bind:showModal={showModal}
                 on:update={handleProductUpdate}
-                on:close={handleModalToggle}
         />
     {/if}
 {:else}

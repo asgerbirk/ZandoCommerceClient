@@ -4,31 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e63899b-ff92-45b7-b0b0-b9e3b339f94e" name="Changes" comment="Cart is done">
-      <change afterPath="$PROJECT_DIR$/client/src/pages/account/Account.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/product/CreateProduct.svelte" afterDir="false" />
+    <list default="true" id="4e63899b-ff92-45b7-b0b0-b9e3b339f94e" name="Changes" comment="cleaned some code and created packages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/client/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/auth/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/auth/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/ChatBot.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/chatbot/ChatBot.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Footer.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/footer/Footer.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Navbar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/navbar/Navbar.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/Account.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/Cart.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/cart/Cart.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/CartItem.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/cart/CartItem.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/CreateProduct.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/EditProductModal.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/product/EditProductModal.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/Home.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/home/Home.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/Login.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/login/Login.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/Products.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/product/Products.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/Register.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/login/Register.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/VerifyMail.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/login/VerifyMail.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/accessToken.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/accessToken.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/cartStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/cartStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/utils/cookieUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/cookieUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/chatbot/ChatBot.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/chatbot/ChatBot.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/account/Account.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/account/Account.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/cart/Cart.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/cart/Cart.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/home/Home.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/home/Home.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/product/EditProductModal.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/product/EditProductModal.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/product/Products.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/product/Products.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +118,8 @@
       <workItem from="1685792572939" duration="1750000" />
       <workItem from="1685797056803" duration="17790000" />
       <workItem from="1685823529550" duration="2590000" />
-      <workItem from="1685826252694" duration="3503000" />
+      <workItem from="1685826252694" duration="5541000" />
+      <workItem from="1685858527488" duration="7490000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1685466882614</created>
@@ -172,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685547391105</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="cleaned some code and created packages">
+      <created>1685830176327</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1685830176327</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,6 +173,7 @@
     <MESSAGE value="first" />
     <MESSAGE value="cleaned the code a little" />
     <MESSAGE value="Cart is done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cart is done" />
+    <MESSAGE value="cleaned some code and created packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaned some code and created packages" />
   </component>
 </project>

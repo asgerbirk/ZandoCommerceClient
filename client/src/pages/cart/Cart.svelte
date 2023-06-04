@@ -94,7 +94,10 @@
         {:else}
             <div class="cart-items w-full md:w-3/4">
                 {#each cartItems as item (item._id)}
-                    <CartItem {item} {deleteFromCart} totalPrice={totalPrice} key={item._id} />
+                    <CartItem {item}
+                              {deleteFromCart}
+                              totalPrice={totalPrice}
+                              key={item._id} />
                 {/each}
             </div>
 

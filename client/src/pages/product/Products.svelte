@@ -84,7 +84,7 @@
 </div>
 
 <div class="grid grid-cols-3 gap-x-10 gap-y-10">
-    {#each filteredProducts as product, index}
+    {#each filteredProducts as product (product._id)}
         <div class="relative pt-6">
             <div class="flex justify-center">
                 <Carousel>
