@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e63899b-ff92-45b7-b0b0-b9e3b339f94e" name="Changes" comment="cleaned some code">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4e63899b-ff92-45b7-b0b0-b9e3b339f94e" name="Changes" comment="cleaned some code and changed sockets and account">
       <change beforePath="$PROJECT_DIR$/client/src/pages/cart/Cart.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/cart/Cart.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/login/Register.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/login/Register.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/accessToken.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/accessToken.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/cartStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/cartStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/login/Login.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/login/Login.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/product/EditProductModal.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/product/EditProductModal.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +115,7 @@
       <workItem from="1685797056803" duration="17790000" />
       <workItem from="1685823529550" duration="2590000" />
       <workItem from="1685826252694" duration="5541000" />
-      <workItem from="1685858527488" duration="9643000" />
+      <workItem from="1685858527488" duration="41589000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1685466882614</created>
@@ -168,7 +166,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685868206473</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="cleaned some code and changed sockets">
+      <created>1685891066337</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1685891066337</updated>
+    </task>
+    <task id="LOCAL-00009" summary="cleaned some code and changed sockets and account">
+      <created>1685906507386</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1685906507386</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +192,8 @@
     <MESSAGE value="Cart is done" />
     <MESSAGE value="cleaned some code and created packages" />
     <MESSAGE value="cleaned some code" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaned some code" />
+    <MESSAGE value="cleaned some code and changed sockets" />
+    <MESSAGE value="cleaned some code and changed sockets and account" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaned some code and changed sockets and account" />
   </component>
 </project>

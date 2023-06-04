@@ -1,5 +1,5 @@
 <script>
-    import { createEventDispatcher, onMount } from "svelte";
+    import { onMount } from "svelte";
     import Carousel from "svelte-carousel";
     import {BASE_URL} from "../../store/urlDomain.js";
 
@@ -7,7 +7,6 @@
     export let productToEdit;
     export let updateProduct;
 
-    let image = "";
     let name = "";
     let description = "";
     let price = "";
@@ -31,7 +30,6 @@
                 const data = await response.json();
                 updateProduct(data);
 
-
             }
         } catch (error) {
             console.error("Error updating product:", error);
@@ -45,7 +43,7 @@
 
 
     onMount(() => {
-        image = productToEdit.imageUrls || "";
+
         name = productToEdit.name || "";
         description = productToEdit.description || "";
         price = productToEdit.price || "";

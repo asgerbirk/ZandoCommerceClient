@@ -2,7 +2,6 @@
     import { navigate } from "svelte-navigator";
     import { BASE_URL } from "../../store/urlDomain.js";
     import Swal from "sweetalert2";
-    import { accessToken } from "../../store/accessToken.js";
     import { setCookie } from "../../utils/cookieUtils.js";
 
     let username = "";

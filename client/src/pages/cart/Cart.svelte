@@ -24,6 +24,7 @@
 
                 if (response.status === 200) {
                     const data = await response.json();
+                    //access to products because of populate in backend.
                     cartItems = data.items;
                     cartCount.set(cartItems.length);
                     calculateTotalPrice();
@@ -43,7 +44,7 @@
         totalPrice = 0;
         cartItems.forEach(item => {
           if (item.product){
-              totalPrice = totalPrice + item.product.price
+              totalPrice += item.product.price
           }
       })
     }
