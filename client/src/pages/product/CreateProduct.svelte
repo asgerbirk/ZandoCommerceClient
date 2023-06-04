@@ -34,9 +34,6 @@
             });
 
             if (response.status === 200) {
-                const data = await response.json();
-                user = data.user;
-                isLoggedIn.set(true);
                 Swal.fire({
                     icon: "success",
                     title: "Product created!",

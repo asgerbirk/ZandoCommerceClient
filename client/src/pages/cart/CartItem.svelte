@@ -3,10 +3,9 @@
 
     export let item;
     export let deleteFromCart;
-    let user;
 </script>
 
-{#if item.product}
+
     <div class="flex pt-6 bg-gray-100 rounded p-4">
         <div class="w-full">
             <div class="flex bg-white rounded p-4">
@@ -36,4 +35,4 @@
             </div>
         </div>
     </div>
-{/if}
+

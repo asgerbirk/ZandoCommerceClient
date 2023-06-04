@@ -2,28 +2,34 @@
     import { accessToken, isLoggedIn } from "../../store/accessToken.js";
     import io from "socket.io-client";
     import { BASE_URL } from "../../store/urlDomain.js";
+    import {checkAuthentication} from "../../auth/auth.js";
+    import {getCookie} from "../../utils/cookieUtils.js";
+    import {onMount} from "svelte";
 
     let messages = [];
     let newMessage = "";
     let username = "";
     let socket;
     let showChat = false;
+    let user;
 
 
 
-    socket = io($BASE_URL, {
-        query: { token: $accessToken },
+
+
+
+    onMount(async () => {
+        user = await checkAuthentication();
+        username = user.username
+        socket = io($BASE_URL);
+
+        socket.on("display-message", (data) => {
+            if (data) {
+                messages = [...messages, { username: data.username, message: data.message }];
+            }
+        });
     });
 
-    socket.on("user-details", (data) => {
-        username = data.username;
-    });
-
-    socket.on("display-message", (data) => {
-        if (data) {
-            messages = [...messages, { username: data.username, message: data.message }];
-        }
-    });
 
     function postMessage() {
         socket.emit("post-message", { username: username, message: newMessage });

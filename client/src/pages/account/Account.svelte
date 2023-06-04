@@ -8,7 +8,7 @@
 
     let products = [];
     let user;
-    let editingProduct = null;
+    let editingProduct;
     let showModal = false;
 
     onMount(async () => {
@@ -113,7 +113,7 @@
         <h2 class="text-5xl mb-4">
             Forbidden - either your token expired or you are not signed in - click here to sign in
         </h2>
-        <a href="/client/public" class="text-3xl text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg  px-5 py-2.5 text-center mr-2 mb-2">
+        <a href="/" class="text-3xl text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg  px-5 py-2.5 text-center mr-2 mb-2">
             Login
         </a>
     </div>

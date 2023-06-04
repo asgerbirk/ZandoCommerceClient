@@ -15,7 +15,7 @@ export const isLoggedIn = writable(loggedIn)
 
 accessToken.subscribe(value => {
     setCookie("jwt", value, { expires: 1 });
-    isLoggedIn.set(!!value);
+    isLoggedIn.set(value);
 });
 
 export function removeAccessToken() {

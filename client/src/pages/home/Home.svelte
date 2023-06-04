@@ -17,7 +17,7 @@
                     credentials: "include",
                 });
 
-                if (response.ok) {
+                if (response.status === 200) {
                     const data = await response.json();
                     cartCount.set(data.items.length);
                 }

@@ -22,7 +22,6 @@
 
             if (response.status === 200) {
                 const data = await response.json();
-                console.log(data);
                 if (data.message === "User created and verification email sent") {
                     await Swal.fire({
                         icon: "info",
@@ -33,11 +32,12 @@
                     });
                 }
             } else {
+                const errorData = await response.json();
                 await Swal.fire({
                     icon: "error",
                     showConfirmButton: false,
                     title: "Oops...",
-                    text: "Email is already taken.",
+                    text:  errorData.message,
                     timer: 2000,
                     timerProgressBar: true,
                     position: "top"

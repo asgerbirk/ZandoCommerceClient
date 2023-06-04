@@ -24,7 +24,6 @@
             if (response.status === 200) {
                 const data = await response.json();
                 setCookie("jwt", data.accessToken, { expires: 1 });
-                accessToken.set(data.accessToken);
                 Swal.fire({
                     icon: "success",
                     title: "Login successful!",

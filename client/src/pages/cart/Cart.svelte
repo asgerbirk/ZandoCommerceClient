@@ -18,10 +18,11 @@
             user = await checkAuthentication();
             if (user) {
                 const response = await fetch($BASE_URL + `/carts/${user._id}`, {
+                    method: "GET",
                     credentials: "include"
                 });
 
-                if (response.ok) {
+                if (response.status === 200) {
                     const data = await response.json();
                     cartItems = data.items;
                     cartCount.set(cartItems.length);
@@ -40,12 +41,11 @@
 
     function calculateTotalPrice() {
         totalPrice = 0;
-        for (let i = 0; i < cartItems.length; i++) {
-            const item = cartItems[i];
-            if (item.product && item.product.price) {
-                totalPrice += item.product.price * item.quantity;
-            }
-        }
+        cartItems.forEach(item => {
+          if (item.product){
+              totalPrice = totalPrice + item.product.price
+          }
+      })
     }
 
     async function handleCheckout() {
@@ -56,10 +56,7 @@
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                cartItems: cartItems.map(item => ({
-                    product: { name: item.product.name, price: item.product.price },
-                    quantity: item.quantity,
-                })),
+                cartItems: cartItems,
             }),
         });
 
@@ -79,7 +76,6 @@
             cartItems = cartItems.filter(cartItem => cartItem.product._id !== productId);
             calculateTotalPrice();
             cartCount.set(cartItems.length);
-            console.log(cartItems);
         } else {
             console.error("Failed to remove item from cart");
         }
@@ -97,7 +93,7 @@
                     <CartItem {item}
                               {deleteFromCart}
                               totalPrice={totalPrice}
-                              key={item._id} />
+                              />
                 {/each}
             </div>
 
@@ -114,7 +110,7 @@
 {:else}
     <div class="flex flex-col items-center justify-center h-screen">
         <h2 class="text-5xl mb-4">Forbidden - either your token expired or you are not signed in - click here to sign in</h2>
-        <a href="/client/public" class="text-3xl text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2">
+        <a href="/" class="text-3xl text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2">
             Login
         </a>
     </div>
