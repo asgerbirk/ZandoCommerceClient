@@ -21,9 +21,10 @@
     onMount(async () => {
         user = await checkAuthentication();
         username = user.username
+
         socket = io($BASE_URL);
 
-        socket.on("display-message", (data) => {
+        socket.on("new-message", (data) => {
             if (data) {
                 messages = [...messages, { username: data.username, message: data.message }];
             }
@@ -32,7 +33,7 @@
 
 
     function postMessage() {
-        socket.emit("post-message", { username: username, message: newMessage });
+        socket.emit("client-sends-a-message", { username: username, message: newMessage });
     }
 
     function toggleChat() {

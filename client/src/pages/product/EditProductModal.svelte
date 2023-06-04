@@ -5,37 +5,33 @@
 
     export let showModal = false;
     export let productToEdit;
+    export let updateProduct;
 
     let image = "";
     let name = "";
     let description = "";
     let price = "";
 
-    const dispatch = createEventDispatcher();
-
-    async function handleUpdate(productId) {
+    async function handleUpdate() {
         try {
-            const updatedProduct = {
-                name,
-                description,
-                price
-            };
+            productToEdit.name = name;
+            productToEdit.description = description;
+            productToEdit.price = price;
 
-            const response = await fetch($BASE_URL + `/products/${productId}`, {
+            const response = await fetch($BASE_URL + `/products/${productToEdit._id}`, {
                 method: "PATCH",
                 credentials: "include",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(updatedProduct)
+                body: JSON.stringify(productToEdit)
             });
 
             if (response.status === 200) {
-                const updatedProductFromServer = await response.json();
-                dispatch("update", updatedProductFromServer);
-                return updatedProductFromServer;
-            } else {
-                console.error("Failed to update product");
+                const data = await response.json();
+                updateProduct(data);
+
+
             }
         } catch (error) {
             console.error("Error updating product:", error);
@@ -43,7 +39,7 @@
     }
 
     function handleSubmit() {
-        handleUpdate(productToEdit._id);
+        handleUpdate();
         showModal = false;
     }
 

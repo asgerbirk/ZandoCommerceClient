@@ -46,18 +46,12 @@
         showModal = true;
     }
 
-    function handleProductUpdate(event) {
-        const updatedProduct = event.detail;
-
-        products = products.map(product => {
-            if (product._id === updatedProduct._id) {
-                return updatedProduct;
-            } else {
-                return product;
-            }
-        });
+    function updateProduct(updatedProduct) {
+        const index = products.findIndex(product => product._id === updatedProduct._id);
+        if (index !== -1) {
+            products[index] = updatedProduct;
+        }
     }
-
 
 
 </script>
@@ -105,7 +99,7 @@
         <EditProductModal
                 bind:productToEdit={editingProduct}
                 bind:showModal={showModal}
-                on:update={handleProductUpdate}
+                updateProduct={updateProduct}
         />
     {/if}
 {:else}
