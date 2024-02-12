@@ -2,7 +2,6 @@
   import { Router, Route } from "svelte-navigator";
   import Home from "./pages/home/Home.svelte";
   import Navbar from "./components/navbar/Navbar.svelte";
-  import Register from "./pages/login/Register.svelte";
   import Login from "./pages/login/Login.svelte";
   import VerifyMail from "./pages/login/VerifyMail.svelte";
   import Account from "./pages/account/Account.svelte";
@@ -15,6 +14,7 @@
   import CartItem from "./pages/cart/CartItem.svelte";
   import Success from "./pages/cart/Success.svelte";
   import Cancel from "./pages/cart/Cancel.svelte";
+  import RegisterForm from "./pages/login/RegisterForm.svelte";
 </script>
 
 <Router>
@@ -22,7 +22,7 @@
   <div class="container mx-auto px-4">
     <Route path="/" component={Login} />
     <Route path="/home" component={Home} />
-    <Route path="/register" component={Register} />
+    <Route path="/register" component={RegisterForm} />
     <Route path="/verify-email" component={VerifyMail} />
     <Route path="/account" component={Account} />
     <Route path="/createProduct" component={CreateProduct} />
