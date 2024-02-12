@@ -1,11 +1,13 @@
 import { isLoggedIn } from "../store/accessToken.js";
 import {onMount} from "svelte";
+import { BASE_URL } from "../store/urlDomain.js";
+
 
 export async function checkAuthentication() {
     let user;
 
     try {
-        const response = await fetch("http://localhost:8080/users", {
+        const response = await fetch("https://zandocommerceapi.onrender.com/login", {
             credentials: "include" // Include credentials for sending cookies
         });
 
