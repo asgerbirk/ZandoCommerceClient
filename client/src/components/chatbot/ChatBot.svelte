@@ -14,10 +14,6 @@
     let user;
 
 
-
-
-
-
     onMount(async () => {
         user = await checkAuthentication();
         username = user.username
@@ -30,7 +26,6 @@
             }
         });
     });
-
 
     function postMessage() {
         socket.emit("client-sends-a-message", { username: username, message: newMessage });

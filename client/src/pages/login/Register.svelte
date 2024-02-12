@@ -77,7 +77,6 @@
                     type="email"
                     placeholder="Enter your email"
                     bind:value={email}
-
             />
         </div>
 

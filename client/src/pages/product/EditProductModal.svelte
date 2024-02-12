@@ -41,13 +41,12 @@
         showModal = false;
     }
 
-
     onMount(() => {
-
         name = productToEdit.name || "";
         description = productToEdit.description || "";
         price = productToEdit.price || "";
     });
+
 </script>
 
 

@@ -10,15 +10,9 @@
         token = urlParams.get("token");
         if (token) {
             try {
-                const response = await fetch(`http://localhost:8080/verify-email?token=${token}`, {
-                    method: "GET",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                });
-
+                const response = await fetch(`http://localhost:8080/verify-email?token=${token}`)
                 if (response.status === 200) {
-                        const data = await response.json();
+
                         Swal.fire({
                             icon: "success",
                             title: "Email verified successfully!",
