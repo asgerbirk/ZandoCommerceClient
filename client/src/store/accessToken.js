@@ -14,9 +14,15 @@ if (getCookie("jwt")){
 export const isLoggedIn = writable(loggedIn)
 
 accessToken.subscribe(value => {
-    setCookie("jwt", value, { expires: 1 });
-    isLoggedIn.set(value);
+    if (value) {
+        setCookie("jwt", value, { expires: 1 });
+        isLoggedIn.set(true);
+    } else {
+        isLoggedIn.set(false);
+    }
 });
+
+
 
 export function removeAccessToken() {
     accessToken.set(null);
