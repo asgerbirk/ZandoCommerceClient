@@ -8,7 +8,7 @@
     let password = "";
     async function handleLogin() {
         try {
-            const response = await fetch($BASE_URL + "/login", {
+            const response = await fetch("https://zandocommerceapi.onrender.com/login", {
                 credentials: "include",
                 method: "POST",
                 headers: {
