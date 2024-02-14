@@ -22,7 +22,7 @@
   <div class="container mx-auto px-4">
     <Route path="/" component={Login} />
     <Route path="/home" component={Home} />
-    <Route path="/register" component={RegisterForm} />
+    <Route path="/registerFrom" component={RegisterForm} />
     <Route path="/verify-email" component={VerifyMail} />
     <Route path="/account" component={Account} />
     <Route path="/createProduct" component={CreateProduct} />
